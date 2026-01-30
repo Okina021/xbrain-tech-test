@@ -30,7 +30,6 @@ public class VendaService {
         return resultados.stream().map(resultado -> {
             String nome = (String) resultado[0];
             Double total = (Double) resultado[1];
-            Long quantidade = (Long) resultado[2];
 
             long dias = inicio.until(fim).getDays() + 1;
             Double mediaDiaria = dias > 0 ? total / dias : 0.0;
