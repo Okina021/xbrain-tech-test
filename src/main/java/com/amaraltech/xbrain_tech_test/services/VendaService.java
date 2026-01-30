@@ -3,7 +3,6 @@ package com.amaraltech.xbrain_tech_test.services;
 import com.amaraltech.xbrain_tech_test.model.Venda;
 import com.amaraltech.xbrain_tech_test.model.VendedorDTO;
 import com.amaraltech.xbrain_tech_test.repositories.VendaRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -12,8 +11,11 @@ import java.util.List;
 @Service
 public class VendaService {
 
-    @Autowired
-    private VendaRepository vendaRepository;
+    private final VendaRepository vendaRepository;
+
+    public VendaService(VendaRepository vendaRepository) {
+        this.vendaRepository = vendaRepository;
+    }
 
     public Venda criarVenda(Venda venda) {
         if (venda.getDataVenda() == null) {
