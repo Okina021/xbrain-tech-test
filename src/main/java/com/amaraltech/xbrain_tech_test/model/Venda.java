@@ -13,7 +13,6 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@EntityListeners(AuditingEntityListener.class)
 public class Venda {
 
     @Id
