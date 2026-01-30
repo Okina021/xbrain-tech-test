@@ -12,8 +12,6 @@ import java.util.List;
 @Repository
 public interface VendaRepository extends JpaRepository<Venda, Long> {
 
-    List<Venda> findByDataVendaBetween(LocalDate inicio, LocalDate fim);
-
     @Query("SELECT v.vendedorNome, SUM(v.valor) as total, COUNT(v) as quantidade " +
             "FROM Venda v " +
             "WHERE v.dataVenda BETWEEN :inicio AND :fim " +
